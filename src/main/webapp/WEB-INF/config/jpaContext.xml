@@ -41,8 +41,8 @@
 	
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-		<property name="url" value="jdbc:mysql://localhost:3306/project?autoReconnect=true" />
-		<property name="username" value="root"/>
-		<property name="password" value="root"/>
+		<property name="url" value="jdbc:mysql://localhost:3306/sh?autoReconnect=true" />
+		<property name="username" value="adminVrqgaxF"/>
+		<property name="password" value="lc_RUVcbD5uY"/>
 	</bean>
 </beans>
