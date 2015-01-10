@@ -1,4 +1,4 @@
-package org.cranesandlama.project.controller;
+package com.sh.ebs.user.controller;
 
 import java.io.IOException;
 import java.util.LinkedHashMap;
@@ -6,9 +6,6 @@ import java.util.Map;
 
 import javax.validation.Valid;
 
-import org.cranesandlama.project.model.User;
-import org.cranesandlama.project.model.UserRole;
-import org.cranesandlama.project.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +13,10 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.sh.ebs.user.model.User;
+import com.sh.ebs.user.model.UserRole;
+import com.sh.ebs.user.service.UserService;
 
 @Controller
 public class UserController {
@@ -70,9 +71,10 @@ public class UserController {
 		return "redirect:/admin";
 	}
 	
-	@RequestMapping(value = "supplier", method=RequestMethod.GET)
+	@RequestMapping(value = "s/profile", method=RequestMethod.GET)
 	public String supplierPage(Model model) throws IOException{
-		return "supplier";
+		
+		return "supplierProfile";
 	}
 	
 	@RequestMapping(value = "corporate", method=RequestMethod.GET)

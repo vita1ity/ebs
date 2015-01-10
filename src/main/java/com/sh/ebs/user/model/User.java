@@ -1,4 +1,4 @@
-package org.cranesandlama.project.model;
+package com.sh.ebs.user.model;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -7,6 +7,8 @@ import java.util.Set;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Transient;
@@ -14,6 +16,8 @@ import javax.persistence.Transient;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+
+import com.sh.ebs.supplier.model.Customer;
 
 @Entity
 @NamedQueries({
@@ -34,6 +38,15 @@ public class User implements UserDetails{
 	@Transient
 	private String confirmPassword;
 	private String role;
+	@ManyToOne
+	@JoinColumn(name="customerId", insertable = false, updatable = false)
+	private Customer customer;
+	public Customer getCustomer() {
+		return customer;
+	}
+	public void setCustomer(Customer customer) {
+		this.customer = customer;
+	}
 	public Long getUserId() {
 		return userId;
 	}

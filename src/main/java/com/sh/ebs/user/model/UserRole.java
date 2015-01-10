@@ -1,4 +1,4 @@
-package org.cranesandlama.project.model;
+package com.sh.ebs.user.model;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

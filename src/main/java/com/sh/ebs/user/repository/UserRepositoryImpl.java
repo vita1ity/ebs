@@ -1,4 +1,4 @@
-package org.cranesandlama.project.repository;
+package com.sh.ebs.user.repository;
 
 import java.util.List;
 
@@ -6,8 +6,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
 
-import org.cranesandlama.project.model.User;
 import org.springframework.stereotype.Repository;
+
+import com.sh.ebs.user.model.User;
 
 @Repository("userRepository")
 public class UserRepositoryImpl implements UserRepository{

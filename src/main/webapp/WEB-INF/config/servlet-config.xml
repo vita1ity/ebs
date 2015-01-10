@@ -11,7 +11,8 @@
 
 	
 	<mvc:annotation-driven/>
-	<context:component-scan base-package="org.cranesandlama.project.controller"/>
+	<context:component-scan base-package="com.sh.ebs.user.controller"/>
+	<context:component-scan base-package="com.sh.ebs.supplier.controller"/>
 	
 	<mvc:resources mapping="/resources/**"
 				   location="/resources/"/>

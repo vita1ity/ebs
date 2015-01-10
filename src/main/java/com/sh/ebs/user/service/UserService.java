@@ -1,6 +1,6 @@
-package org.cranesandlama.project.service;
+package com.sh.ebs.user.service;
 
-import org.cranesandlama.project.model.User;
+import com.sh.ebs.user.model.User;
 
 public interface UserService {
 	

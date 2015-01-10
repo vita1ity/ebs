@@ -9,11 +9,11 @@
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
         http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.0.xsd">
  
-    <bean id="redirectRoleStrategy" class="org.cranesandlama.project.handler.RoleBasedAuthenticationSuccessHandler">
+    <bean id="redirectRoleStrategy" class="com.sh.ebs.user.handler.RoleBasedAuthenticationSuccessHandler">
         <property name="roleUrlMap">
             <map>
                 <entry key="Admin" value="/admin/"/>
-                <entry key="Supplier" value="/supplier/"/>
+                <entry key="Supplier" value="/s/profile"/>
                 <entry key="Corporate" value="/corporate/"/>
                 <entry key="Employee" value="/employee/"/>
             </map>

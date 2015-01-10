@@ -1,6 +1,6 @@
-package org.cranesandlama.project.repository;
+package com.sh.ebs.user.repository;
 
-import org.cranesandlama.project.model.User;
+import com.sh.ebs.user.model.User;
 
 public interface UserRepository {
 	
