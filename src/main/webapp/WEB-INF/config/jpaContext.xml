@@ -43,7 +43,11 @@
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
 		<property name="url" value="jdbc:mysql://localhost:3306/ebs?autoReconnect=true" />
+		
 		<property name="username" value="adminKCedq3K"/>
 		<property name="password" value="KjWu9d1LuL7n"/>
+		
+		<!-- <property name="username" value="root"/>
+		<property name="password" value="root"/> -->
 	</bean>
 </beans>

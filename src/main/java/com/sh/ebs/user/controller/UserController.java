@@ -71,12 +71,7 @@ public class UserController {
 		return "redirect:/admin";
 	}
 	
-	@RequestMapping(value = "s/profile", method=RequestMethod.GET)
-	public String supplierPage(Model model) throws IOException{
 		
-		return "supplierProfile";
-	}
-	
 	@RequestMapping(value = "corporate", method=RequestMethod.GET)
 	public String corporatePage(Model model) throws IOException{
 		return "corporate";

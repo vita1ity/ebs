@@ -3,6 +3,6 @@
 
 <%@ include file="supplierHeader.jsp" %>
 <body>
-
+	
 </body>
 <%@ include file="footer.jsp" %>
