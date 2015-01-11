@@ -29,6 +29,9 @@ public class Customer implements Serializable{
 	@OneToMany(mappedBy="customer", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
 	private List<Store> stores = new ArrayList<Store>();
 	
+	@OneToMany(mappedBy="customer", cascade=CascadeType.ALL, fetch=FetchType.LAZY)
+	private List<Product> products = new ArrayList<Product>();
+	
 	public long getCustomerId() {
 		return customerId;
 	}
@@ -47,5 +50,16 @@ public class Customer implements Serializable{
 	public void setUsers(List<User> users) {
 		this.users = users;
 	}
-	
+	public List<Store> getStores() {
+		return stores;
+	}
+	public void setStores(List<Store> stores) {
+		this.stores = stores;
+	}
+	public List<Product> getProducts() {
+		return products;
+	}
+	public void setProducts(List<Product> products) {
+		this.products = products;
+	}
 }

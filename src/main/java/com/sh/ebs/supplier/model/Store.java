@@ -1,9 +1,12 @@
 package com.sh.ebs.supplier.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
@@ -36,6 +39,14 @@ public class Store {
 	@ManyToOne
 	@JoinColumn(name="customerId", insertable = true, updatable = true, nullable = false)
 	private Customer customer;
+	
+	@ManyToMany(mappedBy = "stores")
+	private List<Product> products;
+	
+	
+	/*@ManyToMany
+	@JoinColumn(name = "productId", referencedColumnName = "productId")
+	private List<Product> products;*/
 	
 	public long getStoreId() {
 		return storeId;
@@ -98,12 +109,49 @@ public class Store {
 	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
+	
+	public List<Product> getProducts() {
+		return products;
+	}
+	public void setProducts(List<Product> products) {
+		this.products = products;
+	}
 	@Override
 	public String toString() {
-		return "Store [contactNumbers=" + contactNumbers + ", email=" + email
+		return "Store " + storeId + " [contactNumbers=" + contactNumbers + ", email=" + email
 				+ ", mall=" + mall + ", place=" + place + ", city=" + city
 				+ ", country=" + country + ", x=" + x + ", y=" + y + "]";
 	}
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + (int) (storeId ^ (storeId >>> 32));
+		long temp;
+		temp = Double.doubleToLongBits(x);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		temp = Double.doubleToLongBits(y);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
+		return result;
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Store other = (Store) obj;
+		if (storeId != other.storeId)
+			return false;
+		if (Double.doubleToLongBits(x) != Double.doubleToLongBits(other.x))
+			return false;
+		if (Double.doubleToLongBits(y) != Double.doubleToLongBits(other.y))
+			return false;
+		return true;
+	}
+	
 	
 	
 }

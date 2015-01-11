@@ -2,6 +2,7 @@ package com.sh.ebs.supplier.repository;
 
 import java.util.List;
 
+import com.sh.ebs.supplier.model.Product;
 import com.sh.ebs.supplier.model.Store;
 
 public interface StoreRepository {
